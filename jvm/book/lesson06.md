@@ -260,7 +260,41 @@ attribute_info	attributes				attributes_count
 			* 否则根据v的符号，转换为T所能表示的最大或最小正数
 		* Java虚拟机规范明确规定数值类型的窄化转换指令永远不可能导致虚拟机抛出运行时异常
 * 对象创建与访问指令
-	
+	* 创建类实例的指令：new
+	* 创建数组的指令：newarray、anewarray、multianewarray
+	* 访问类字段和实例字段的指令：getstatic、 putstatic、getfield、putfield
+	* 把一个数组元素加载到操作数栈的指令：baload、 caload、 saload、 iaload、 faload、daload、 aaload
+	* 将一个操作数栈的值存储到数组元素中的指令：bastore、 castore、 sastore、 iastore、 fastore、 dastore、 aastore
+	* 取数组长度的指令：arraylength
+	* 检查类实例的指令：instanceof、checkcast
+* 操作数栈管理指令
+	* 将操作数栈的栈顶一个或两个元素出栈：pop、pop2
+	* 复制栈顶的一个或两个数值并将复制值或双份的复制值重新压入栈顶：dup、dup2、dup_x1、dup2_x1、dup_x2、dup2_x2
+	* 将栈最顶端的两个数值互换：swap
+* 控制转移指令
+	* 分支指令：ifeq、iflt、ifle、ifne、ifgt、ifge、ifnull、ifnotnull、if_icmpeq、if_icmplt、
+	* if_icmpgt、if_icmple、if_icmpge、if_acmpeq、if_acmpne
+	* 复合条件分支指令：tableswitch、lookupswitch
+	* 无条件分支：goto、goto_w、jsr、jsr_w、ret
+* 方法调用和返回指令
+	* invokeinterface指令用于调用接口方法
+	* invokespecial指令用于调用一些特殊处理的实例方法：实例初始化方法、私有方法、父类方法
+	* invokestatic指令用于调用类方法
+	* invokedynamic指令用于在运行时动态解析出调用点限定符所引用的方法，并执行该方法
+	* 方法调用指令与数据类型无关，而方法返回指令是根据返回值的类型区分的
+* 异常处理指令
+	* athrow指令
+	* 处理异常不是由字节指令来实现，而是采用异常表来完成的
+* 同步指令
+	* 方法级的同步是隐式的，即无须通过字节码指令来控制
+	* 虚拟机可以从方法常量池的方法表结构中的ACC_SYNCHRONIZED访问标志得知一个方法是否声明为同步方法
+
+## 公有设计和私有实现
+* Java虚拟机规范描绘了Java虚拟机应有的共同程序存储格式：Class文件格式以及字节码指令集
+* 虚拟机实现：
+	* 将输入的Java虚拟机代码在加载或执行时翻译成另外一种虚拟机的指令集
+	* 将输入的Java虚拟机代码在加载或执行时翻译成宿主机CPU的本地指令集（JIT代码生成技术）
+
 
 
 > 有不虞只誉，有求全之毁 - 孟子·离娄上
