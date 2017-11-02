@@ -104,6 +104,7 @@ public class SpringEventListenerDemo {
 	* 恢复：/resume
 
 
+> 参考 ：https://segmentfault.com/l/1500000011384570?_ea=2730888
 
 
 
