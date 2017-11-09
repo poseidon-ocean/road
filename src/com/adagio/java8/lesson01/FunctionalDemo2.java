@@ -1,15 +1,15 @@
 package com.adagio.java8.lesson01;
 
 /**
- * º¯ÊıÊ½½Ó¿Ú
- * ÈçºÎÊ¹ÓÃ::¹Ø¼ü×ÖÒıÓÃ¹¹Ôìº¯Êı
+ * å‡½æ•°å¼æ¥å£
+ * å¦‚ä½•ä½¿ç”¨::å…³é”®å­—å¼•ç”¨æ„é€ å‡½æ•°
  */
 public class FunctionalDemo2 {
 
 	public static void main(String[] args) {
-		//Í¨¹ıPerson::newÀ´´´½¨Ò»¸öPersonÀà¹¹Ôìº¯ÊıµÄÒıÓÃ
+		//é€šè¿‡Person::newæ¥åˆ›å»ºä¸€ä¸ªPersonç±»æ„é€ å‡½æ•°çš„å¼•ç”¨
 		PersonFactory<Person> personFactory = Person::new;
-		//Java±àÒëÆ÷»á×Ô¶¯µØÑ¡ÔñºÏÊÊµÄ¹¹Ôìº¯ÊıÀ´Æ¥ÅäPersonFactory.createº¯ÊıµÄÇ©Ãû£¬²¢Ñ¡ÔñÕıÈ·µÄ¹¹Ôìº¯ÊıĞÎÊ½
+		//Javaç¼–è¯‘å™¨ä¼šè‡ªåŠ¨åœ°é€‰æ‹©åˆé€‚çš„æ„é€ å‡½æ•°æ¥åŒ¹é…PersonFactory.createå‡½æ•°çš„ç­¾åï¼Œå¹¶é€‰æ‹©æ­£ç¡®çš„æ„é€ å‡½æ•°å½¢å¼
 		Person person = personFactory.create("Peter", "Parker");
 		System.out.println(person.firstName);
 	}

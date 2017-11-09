@@ -1,51 +1,51 @@
 package com.adagio.java8.lesson01;
 
 /**
- * ·ÃÎÊ¾Ö²¿¶ÔÓ¦µÄÍâ²¿ÇøÓòµÄ¾Ö²¿final±äÁ¿£¬ÒÔ¼°³ÉÔ±±äÁ¿ºÍ¾²Ì¬±äÁ¿
+ * è®¿é—®å±€éƒ¨å¯¹åº”çš„å¤–éƒ¨åŒºåŸŸçš„å±€éƒ¨finalå˜é‡ï¼Œä»¥åŠæˆå‘˜å˜é‡å’Œé™æ€å˜é‡
  *
  */
 public class AccessDemo {
 
 	public static void main(String[] args) {
-		//·ÃÎÊ¾Ö²¿±äÁ¿
+		//è®¿é—®å±€éƒ¨å˜é‡
 //		final int num = 1;
 //		Converter<Integer, String> stringConverter =
 //		        (from) -> String.valueOf(from + num);
 //
 //		System.out.println(stringConverter.convert(2));     // 3
 		
-		//±äÁ¿num²¢²»ĞèÒªÒ»¶¨ÊÇfinal¡£ÏÂÃæµÄ´úÂëÒÀÈ»ÊÇºÏ·¨µÄ
+		//å˜é‡numå¹¶ä¸éœ€è¦ä¸€å®šæ˜¯finalã€‚ä¸‹é¢çš„ä»£ç ä¾ç„¶æ˜¯åˆæ³•çš„
 //		int num = 1;
 //		Converter<Integer, String> stringConverter =
 //		        (from) -> String.valueOf(from + num);
 //
 //		stringConverter.convert(2);     // 3
 		
-		//numÔÚ±àÒëµÄÊ±ºò±»ÒşÊ½µØµ±×öfinal±äÁ¿À´´¦Àí
+		//numåœ¨ç¼–è¯‘çš„æ—¶å€™è¢«éšå¼åœ°å½“åšfinalå˜é‡æ¥å¤„ç†
 		int num = 1;
 		Converter<Integer, String> stringConverter =
 				(from) -> String.valueOf(from + num);
-//		num = 3;		//²»±»ÔÊĞí
+//		num = 3;		//ä¸è¢«å…è®¸
 		System.out.println(stringConverter.convert(5));
 				
 		Lambda4 l = new Lambda4();
 		l.testScopes();
 		
 		
-		//·ÃÎÊÄ¬ÈÏ½Ó¿Ú·½·¨
-		//Ä¬ÈÏ·½·¨ÎŞ·¨ÔÚlambda±í´ïÊ½ÄÚ²¿±»·ÃÎÊ£¬ÏÂÃæµÄ´úÂëÊÇÎŞ·¨Í¨¹ı±àÒë
+		//è®¿é—®é»˜è®¤æ¥å£æ–¹æ³•
+		//é»˜è®¤æ–¹æ³•æ— æ³•åœ¨lambdaè¡¨è¾¾å¼å†…éƒ¨è¢«è®¿é—®ï¼Œä¸‹é¢çš„ä»£ç æ˜¯æ— æ³•é€šè¿‡ç¼–è¯‘
 //		Formula formula = (a) -> sqrt( a * 100);
 	}
 	
 }
 
-//·ÃÎÊ³ÉÔ±±äÁ¿ºÍ¾²Ì¬±äÁ¿
+//è®¿é—®æˆå‘˜å˜é‡å’Œé™æ€å˜é‡
 class Lambda4 {
     static int outerStaticNum;
     int outerNum;
 
     void testScopes() {
-    	//ÔÚlambda±í´ïÊ½µÄÄÚ²¿ÄÜ»ñÈ¡µ½¶Ô³ÉÔ±±äÁ¿»ò¾²Ì¬±äÁ¿µÄ¶ÁĞ´È¨
+    	//åœ¨lambdaè¡¨è¾¾å¼çš„å†…éƒ¨èƒ½è·å–åˆ°å¯¹æˆå‘˜å˜é‡æˆ–é™æ€å˜é‡çš„è¯»å†™æƒ
         Converter<Integer, String> stringConverter1 = (from) -> {
             outerNum = 23;
             return String.valueOf(from);

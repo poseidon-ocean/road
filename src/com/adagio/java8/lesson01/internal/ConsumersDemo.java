@@ -5,7 +5,7 @@ import java.util.function.Consumer;
 import com.adagio.java8.lesson01.Person;
 
 /**
- * Consumer代表了在一个输入参数上需要进行的操作
+ * Consumer浠ｈ〃浜嗗湪涓�涓緭鍏ュ弬鏁颁笂闇�瑕佽繘琛岀殑鎿嶄綔
  *
  */
 public class ConsumersDemo {

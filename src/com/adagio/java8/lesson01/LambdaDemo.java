@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.Comparator;
 
 /**
- * Lambda±í´ïÊ½
+ * Lambdaè¡¨è¾¾å¼
  *
  */
 public class LambdaDemo {

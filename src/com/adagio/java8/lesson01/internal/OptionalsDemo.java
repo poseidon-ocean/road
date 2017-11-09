@@ -3,11 +3,11 @@ package com.adagio.java8.lesson01.internal;
 import java.util.Optional;
 
 /**
- * Optional����һ������ʽ�ӿڣ�����һ�����ɵĹ��߽ӿڣ�������ֹNullPointerException����
+ * Optional不是一个函数式接口，而是一个精巧的工具接口，用来防止NullPointerException产生
  * 
- * Optional��һ���򵥵�ֵ���������ֵ������null��Ҳ������non-null��
- * ���ǵ�һ���������ܻ᷵��һ��non-null��ֵ��Ҳ���ܷ���һ����ֵ��
- * Ϊ�˲�ֱ�ӷ���null��������Java 8�оͷ���һ��Optional.
+ * Optional是一个简单的值容器，这个值可以是null，也可以是non-null。
+ * 考虑到一个方法可能会返回一个non-null的值，也可能返回一个空值。
+ * 为了不直接返回null，我们在Java 8中就返回一个Optional.
  *
  */
 public class OptionalsDemo {

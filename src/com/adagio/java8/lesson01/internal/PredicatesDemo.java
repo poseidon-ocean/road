@@ -4,8 +4,8 @@ import java.util.Objects;
 import java.util.function.Predicate;
 
 /**
- * PredicateÊÇÒ»¸ö²¼¶ûÀàĞÍµÄº¯Êı£¬¸Ãº¯ÊıÖ»ÓĞÒ»¸öÊäÈë²ÎÊı
- * ÓÃÓÚ´¦Àí¸´ÔÓµÄÂß¼­¶¯´Ê£¨and, or£¬negate£©
+ * Predicateæ˜¯ä¸€ä¸ªå¸ƒå°”ç±»å‹çš„å‡½æ•°ï¼Œè¯¥å‡½æ•°åªæœ‰ä¸€ä¸ªè¾“å…¥å‚æ•°
+ * ç”¨äºå¤„ç†å¤æ‚çš„é€»è¾‘åŠ¨è¯ï¼ˆand, orï¼Œnegateï¼‰
  *
  */
 public class PredicatesDemo {

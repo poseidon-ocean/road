@@ -5,8 +5,8 @@ import java.util.Comparator;
 import com.adagio.java8.lesson01.Person;
 
 /**
- * ±È½Ïº¯Êı
- * Java 8 ÎªÕâ¸ö½Ó¿ÚÌí¼ÓÁË²»Í¬µÄÄ¬ÈÏ·½·¨
+ * æ¯”è¾ƒå‡½æ•°
+ * Java 8 ä¸ºè¿™ä¸ªæ¥å£æ·»åŠ äº†ä¸åŒçš„é»˜è®¤æ–¹æ³•
  *
  */
 public class ComparatorsDemo {

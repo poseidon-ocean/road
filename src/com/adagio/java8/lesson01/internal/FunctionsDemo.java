@@ -3,7 +3,7 @@ package com.adagio.java8.lesson01.internal;
 import java.util.function.Function;
 
 /**
- * Function½Ó¿Ú½ÓÊÕÒ»¸ö²ÎÊı£¬²¢·µ»Øµ¥Ò»µÄ½á¹û¡£Ä¬ÈÏ·½·¨¿ÉÒÔ½«¶à¸öº¯Êı´®ÔÚÒ»Æğ£¨compse, andThen£©
+ * Functionæ¥å£æ¥æ”¶ä¸€ä¸ªå‚æ•°ï¼Œå¹¶è¿”å›å•ä¸€çš„ç»“æœã€‚é»˜è®¤æ–¹æ³•å¯ä»¥å°†å¤šä¸ªå‡½æ•°ä¸²åœ¨ä¸€èµ·ï¼ˆcompse, andThenï¼‰
  *
  */
 public class FunctionsDemo {

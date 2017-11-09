@@ -7,19 +7,19 @@ import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 /**
- * java.util.Stream±íÊ¾ÁËÄ³Ò»ÖÖÔªËØµÄÐòÁÐ£¬ÔÚÕâÐ©ÔªËØÉÏ¿ÉÒÔ½øÐÐ¸÷ÖÖ²Ù×÷
- * Stream²Ù×÷¿ÉÒÔÊÇÖÐ¼ä²Ù×÷£¬Ò²¿ÉÒÔÊÇÍê½á²Ù×÷
- * Íê½á²Ù×÷»á·µ»ØÒ»¸öÄ³ÖÖÀàÐÍµÄÖµ£¬¶øÖÐ¼ä²Ù×÷»á·µ»ØÁ÷¶ÔÏó±¾Éí£¬²¢ÇÒÄã¿ÉÒÔÍ¨¹ý¶à´Îµ÷ÓÃÍ¬Ò»¸öÁ÷²Ù×÷·½·¨À´½«²Ù×÷½á¹û´®ÆðÀ´
+ * java.util.Streamè¡¨ç¤ºäº†æŸä¸€ç§å…ƒç´ çš„åºåˆ—ï¼Œåœ¨è¿™äº›å…ƒç´ ä¸Šå¯ä»¥è¿›è¡Œå„ç§æ“ä½œ
+ * Streamæ“ä½œå¯ä»¥æ˜¯ä¸­é—´æ“ä½œï¼Œä¹Ÿå¯ä»¥æ˜¯å®Œç»“æ“ä½œ
+ * å®Œç»“æ“ä½œä¼šè¿”å›žä¸€ä¸ªæŸç§ç±»åž‹çš„å€¼ï¼Œè€Œä¸­é—´æ“ä½œä¼šè¿”å›žæµå¯¹è±¡æœ¬èº«ï¼Œå¹¶ä¸”ä½ å¯ä»¥é€šè¿‡å¤šæ¬¡è°ƒç”¨åŒä¸€ä¸ªæµæ“ä½œæ–¹æ³•æ¥å°†æ“ä½œç»“æžœä¸²èµ·æ¥
  * 
  */
 public class StreamsDemo {
 
 	public static void main(String[] args) {
-		//Á÷²Ù×÷¿ÉÒÔÊÇË³ÐòµÄ£¬Ò²¿ÉÒÔÊÇ²¢ÐÐµÄ
-		//Ë³Ðò²Ù×÷Í¨¹ýµ¥Ïß³ÌÖ´ÐÐ£¬¶ø²¢ÐÐ²Ù×÷ÔòÍ¨¹ý¶àÏß³ÌÖ´ÐÐ
+		//æµæ“ä½œå¯ä»¥æ˜¯é¡ºåºçš„ï¼Œä¹Ÿå¯ä»¥æ˜¯å¹¶è¡Œçš„
+		//é¡ºåºæ“ä½œé€šè¿‡å•çº¿ç¨‹æ‰§è¡Œï¼Œè€Œå¹¶è¡Œæ“ä½œåˆ™é€šè¿‡å¤šçº¿ç¨‹æ‰§è¡Œ
 		
-		/*********	Ë³Ðò		***********/
-		//ÐòÁÐÁ÷
+		/*********	é¡ºåº		***********/
+		//åºåˆ—æµ
 		List<String> stringCollection = new ArrayList<>();
 		stringCollection.add("ddd2");
 		stringCollection.add("aaa2");
@@ -44,11 +44,11 @@ public class StreamsDemo {
 //		count(stringCollection);
 		
 //		reduce(stringCollection);
-		/*********	Ë³Ðò		***********/
+		/*********	é¡ºåº		***********/
 		
 		
-		/*******	²¢ÐÐ	Parallel Streams	*********/
-		//²âÁ¿Ò»ÏÂ¶ÔÕâ¸ö¼¯ºÏ½øÐÐÅÅÐòËùÊ¹ÓÃµÄÊ±¼ä
+		/*******	å¹¶è¡Œ	Parallel Streams	*********/
+		//æµ‹é‡ä¸€ä¸‹å¯¹è¿™ä¸ªé›†åˆè¿›è¡ŒæŽ’åºæ‰€ä½¿ç”¨çš„æ—¶é—´
 		int max = 1000000;
 		List<String> values = new ArrayList<>(max);
 		for (int i = 0; i < max; i++) {
@@ -59,12 +59,12 @@ public class StreamsDemo {
 		sequence(values);
 		parallel(values);
 		
-		/*******	²¢ÐÐ		*********/
+		/*******	å¹¶è¡Œ		*********/
 	}
 
 	
 	/**
-	 * ²¢ÐÐÅÅÐò
+	 * å¹¶è¡ŒæŽ’åº
 	 * @param values
 	 */
 	public static void parallel(List<String> values) {
@@ -81,7 +81,7 @@ public class StreamsDemo {
 
 
 	/**
-	 * Ë³ÐòÅÅÐò
+	 * é¡ºåºæŽ’åº
 	 * @param values
 	 */
 	public static void sequence(List<String> values) {
@@ -99,7 +99,7 @@ public class StreamsDemo {
 
 
 	/**
-	 * ¸Ã²Ù×÷ÊÇÒ»¸öÖÕ½á²Ù×÷£¬ËüÄÜ¹»Í¨¹ýÄ³Ò»¸ö·½·¨£¬¶ÔÔªËØ½øÐÐÏ÷¼õ²Ù×÷
+	 * è¯¥æ“ä½œæ˜¯ä¸€ä¸ªç»ˆç»“æ“ä½œï¼Œå®ƒèƒ½å¤Ÿé€šè¿‡æŸä¸€ä¸ªæ–¹æ³•ï¼Œå¯¹å…ƒç´ è¿›è¡Œå‰Šå‡æ“ä½œ
 	 * @param stringCollection
 	 */
 	public static void reduce(List<String> stringCollection) {
@@ -112,7 +112,7 @@ public class StreamsDemo {
 	}
 
 	/**
-	 * CountÊÇÒ»¸öÖÕ½á²Ù×÷£¬ËüµÄ×÷ÓÃÊÇ·µ»ØÒ»¸öÊýÖµ£¬ÓÃÀ´±êÊ¶µ±Ç°Á÷¶ÔÏóÖÐ°üº¬µÄÔªËØÊýÁ¿
+	 * Countæ˜¯ä¸€ä¸ªç»ˆç»“æ“ä½œï¼Œå®ƒçš„ä½œç”¨æ˜¯è¿”å›žä¸€ä¸ªæ•°å€¼ï¼Œç”¨æ¥æ ‡è¯†å½“å‰æµå¯¹è±¡ä¸­åŒ…å«çš„å…ƒç´ æ•°é‡
 	 * @param stringCollection
 	 */
 	public static void count(List<String> stringCollection) {
@@ -124,7 +124,7 @@ public class StreamsDemo {
 	}
 
 	/**
-	 * Æ¥Åä²Ù×÷ÓÐ¶àÖÖ²»Í¬µÄÀàÐÍ£¬¶¼ÊÇÓÃÀ´ÅÐ¶ÏÄ³Ò»ÖÖ¹æÔòÊÇ·ñÓëÁ÷¶ÔÏóÏà»¥ÎÇºÏµÄ
+	 * åŒ¹é…æ“ä½œæœ‰å¤šç§ä¸åŒçš„ç±»åž‹ï¼Œéƒ½æ˜¯ç”¨æ¥åˆ¤æ–­æŸä¸€ç§è§„åˆ™æ˜¯å¦ä¸Žæµå¯¹è±¡ç›¸äº’å»åˆçš„
 	 * @param stringCollection
 	 */
 	public static void match(List<String> stringCollection) {
@@ -144,7 +144,7 @@ public class StreamsDemo {
 	}
 
 	/**
-	 * mapÊÇÒ»¸ö¶ÔÓÚÁ÷¶ÔÏóµÄÖÐ¼ä²Ù×÷£¬Í¨¹ý¸ø¶¨µÄ·½·¨£¬ËüÄÜ¹»°ÑÁ÷¶ÔÏóÖÐµÄÃ¿Ò»¸öÔªËØ¶ÔÓ¦µ½ÁíÍâÒ»¸ö¶ÔÏóÉÏ
+	 * mapæ˜¯ä¸€ä¸ªå¯¹äºŽæµå¯¹è±¡çš„ä¸­é—´æ“ä½œï¼Œé€šè¿‡ç»™å®šçš„æ–¹æ³•ï¼Œå®ƒèƒ½å¤ŸæŠŠæµå¯¹è±¡ä¸­çš„æ¯ä¸€ä¸ªå…ƒç´ å¯¹åº”åˆ°å¦å¤–ä¸€ä¸ªå¯¹è±¡ä¸Š
 	 * @param stringCollection
 	 */
 	public static void map(List<String> stringCollection) {
@@ -157,12 +157,12 @@ public class StreamsDemo {
 	}
 
 	/**
-	 * SortedÊÇÒ»¸öÖÐ¼ä²Ù×÷£¬ÄÜ¹»·µ»ØÒ»¸öÅÅ¹ýÐòµÄÁ÷¶ÔÏóµÄÊÓÍ¼
+	 * Sortedæ˜¯ä¸€ä¸ªä¸­é—´æ“ä½œï¼Œèƒ½å¤Ÿè¿”å›žä¸€ä¸ªæŽ’è¿‡åºçš„æµå¯¹è±¡çš„è§†å›¾
 	 * 
-	 * Á÷¶ÔÏóÖÐµÄÔªËØ»áÄ¬ÈÏ°´ÕÕ×ÔÈ»Ë³Ðò½øÐÐÅÅÐò
-	 * ³ý·ÇÄã×Ô¼ºÖ¸¶¨Ò»¸öComparator½Ó¿ÚÀ´¸Ä±äÅÅÐò¹æÔò
+	 * æµå¯¹è±¡ä¸­çš„å…ƒç´ ä¼šé»˜è®¤æŒ‰ç…§è‡ªç„¶é¡ºåºè¿›è¡ŒæŽ’åº
+	 * é™¤éžä½ è‡ªå·±æŒ‡å®šä¸€ä¸ªComparatoræŽ¥å£æ¥æ”¹å˜æŽ’åºè§„åˆ™
 	 * 
-	 * sortedÖ»ÊÇ´´½¨Ò»¸öÁ÷¶ÔÏóÅÅÐòµÄÊÓÍ¼£¬¶ø²»»á¸Ä±äÔ­À´¼¯ºÏÖÐÔªËØµÄË³Ðò
+	 * sortedåªæ˜¯åˆ›å»ºä¸€ä¸ªæµå¯¹è±¡æŽ’åºçš„è§†å›¾ï¼Œè€Œä¸ä¼šæ”¹å˜åŽŸæ¥é›†åˆä¸­å…ƒç´ çš„é¡ºåº
 	 * @param stringCollection
 	 */
 	public static void sorted(List<String> stringCollection) {
@@ -175,8 +175,8 @@ public class StreamsDemo {
 	}
 
 	/**
-	 * Filter½ÓÊÜÒ»¸öpredicate½Ó¿ÚÀàÐÍµÄ±äÁ¿£¬²¢½«ËùÓÐÁ÷¶ÔÏóÖÐµÄÔªËØ½øÐÐ¹ýÂË
-	 * ¸Ã²Ù×÷ÊÇÒ»¸öÖÐ¼ä²Ù×÷
+	 * FilteræŽ¥å—ä¸€ä¸ªpredicateæŽ¥å£ç±»åž‹çš„å˜é‡ï¼Œå¹¶å°†æ‰€æœ‰æµå¯¹è±¡ä¸­çš„å…ƒç´ è¿›è¡Œè¿‡æ»¤
+	 * è¯¥æ“ä½œæ˜¯ä¸€ä¸ªä¸­é—´æ“ä½œ
 	 * @param stringCollection
 	 */
 	public static void filter(List<String> stringCollection) {

@@ -5,7 +5,7 @@ import java.util.function.Supplier;
 import com.adagio.java8.lesson01.Person;
 
 /**
- * Supplier½Ó¿Ú²úÉúÒ»¸ö¸ø¶¨ÀàĞÍµÄ½á¹û¡£ÓëFunction²»Í¬µÄÊÇ£¬SupplierÃ»ÓĞÊäÈë²ÎÊı¡£
+ * Supplieræ¥å£äº§ç”Ÿä¸€ä¸ªç»™å®šç±»å‹çš„ç»“æœã€‚ä¸Functionä¸åŒçš„æ˜¯ï¼ŒSupplieræ²¡æœ‰è¾“å…¥å‚æ•°ã€‚
  *
  */
 public class SuppliersDemo {

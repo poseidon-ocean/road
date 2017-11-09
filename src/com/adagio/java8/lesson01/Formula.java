@@ -4,7 +4,7 @@ public interface Formula {
 
 	double calculate(int a);
 	
-	//ÔÊĞíÔÚ½Ó¿ÚÖĞÓĞÄ¬ÈÏ·½·¨ÊµÏÖ
+	//å…è®¸åœ¨æ¥å£ä¸­æœ‰é»˜è®¤æ–¹æ³•å®ç°
 	default double sqrt(int a) {
 		return Math.sqrt(a);
 	}

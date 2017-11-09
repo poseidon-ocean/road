@@ -1,7 +1,7 @@
 package com.adagio.java8.lesson01;
 
 /**
- * º¯ÊıÊ½½Ó¿Ú
+ * å‡½æ•°å¼æ¥å£
  *
  */
 public class FunctionalDemo {
@@ -11,7 +11,7 @@ public class FunctionalDemo {
 //		Integer converted = converter.convert("123");
 //		System.out.println(converted);    // 123
 		
-		//·½·¨ÒıÓÃ
+		//æ–¹æ³•å¼•ç”¨
 //		Converter<String, Integer> converter = Integer::valueOf;
 //		Integer converted = converter.convert("123");
 //		System.out.println(converted);   // 123
