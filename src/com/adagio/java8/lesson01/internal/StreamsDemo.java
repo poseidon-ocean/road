@@ -56,8 +56,10 @@ public class StreamsDemo {
 		    values.add(uuid.toString());
 		}
 		
-		sequence(values);
-		parallel(values);
+		
+		//注意：说parallelStream比stream这个快，但是测试发现好像更慢
+		sequence(values);		//sequential sort took: 3 ms 
+		parallel(values);		//parallel sort took: 772 ms 
 		
 		/*******	并行		*********/
 	}
