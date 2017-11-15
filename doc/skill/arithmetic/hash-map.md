@@ -56,6 +56,44 @@
 * 散列越分散，length -1 换算成二进制权位O越多，那么会造成冲突概率越多
 
 ## 高并发下，为什么HashMap可能会出现死锁
+* Rehash是HashMap在扩容时候的一个步骤
+	* HashMap的容量是有限的
+	* HashMap需要扩展它的长度，也就是进行Resize
+* 影响发生Resize的因素有两个
+	*　Capacity　HashMap的当前长度，是2的幂
+	* LoadFactor HashMap负载因子，默认值为0.75f
+* 衡量HashMap是否进行Resize的条件如下
+	* HashMap.Size   >=  Capacity * LoadFactor
+* Resize步骤
+	* 扩容 - 创建一个新的Entry空数组，长度是原数组的2倍
+	* ReHash - 遍历原Entry数组，把所有的Entry重新Hash到新数组
+		* 为什么要重新Hash呢？因为长度扩大以后，Hash的规则也随之改变。
+		* Hash公式 ： index =  HashCode（Key） &  （Length - 1） 
+		* 当原数组长度为8时，Hash运算是和111B做与运算；
+		* 新数组长度为16，Hash运算是和1111B做与运算。Hash结果显然不同
+* ReHash的Java代码如下
+```
+/**
+ * Transfers all entries from current table to newTable.
+ */
+void transfer(Entry[] newTable, boolean rehash) {
+    int newCapacity = newTable.length;
+    for (Entry<K,V> e : table) {
+        while(null != e) {
+            Entry<K,V> next = e.next;
+            if (rehash) {
+                e.hash = null == e.key ? 0 : hash(e.key);
+            }
+            int i = indexFor(e.hash, newCapacity);
+            e.next = newTable[i];
+            newTable[i] = e;
+            e = next;
+        }
+    }
+}
+```
+* ReHash在并发的情况下可能会形成链表环,采用ConcurrentHashMap
+
 ## Java8中，HashMap的结构有什么样的优化
 
 
@@ -66,18 +104,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 http://mp.weixin.qq.com/s/HzRH9ZJYmidzW5jrMvEi4w
-
-
-
-
-
-
-
-
-
-
-
-
-
+http://mp.weixin.qq.com/s/dzNq50zBQ4iDrOAhM4a70A
 
