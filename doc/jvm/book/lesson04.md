@@ -8,10 +8,10 @@
 	
 ## JDK的命令行工具
 * jps:虚拟机进程状况工具 (JVM Process Status Tool)
-	命令格式：jps[options][hostid]
+	命令格式：jps  options [hostid]
 * jstat:虚拟机统计信息监视工具 (JVM Statistics Monitoring Tool)
 	* 显示虚拟机进程中的类装载、内存、垃圾收集、JIT编译等运行数据
-	* 命令格式：jstat[options vmid[interval[s|ms][count]]]
+	* 命令格式：jstat options 
 	* 示例：每300毫秒查询一次进程13829垃圾收集状况，一共查询20次>jstat -gc 13829 300 20
 	* 选项： -class -gc -gcutil -gcnew -gcold
 * jinfo:Java配置信息工具 (Configuration info for java)
