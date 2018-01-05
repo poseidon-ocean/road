@@ -8,4 +8,4 @@
 	* 所有Maven插件类都继承org.apache.maven.plugin.AbstractMojo类，实现execute方法
 	* 通过pom.xml配置文件传参，实现相应的逻辑
 	* 用户输入mvn命令时获取参数，并执行相应的逻辑
-
+* clean install -Dmaven.test.skip=true  -Psit
