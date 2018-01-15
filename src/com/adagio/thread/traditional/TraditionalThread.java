@@ -1,5 +1,9 @@
-package com.adagio.thread;
+package com.adagio.thread.traditional;
 
+/**
+ * 传统线程demo
+ *
+ */
 public class TraditionalThread {
 
 	public static void main(String[] args) {
