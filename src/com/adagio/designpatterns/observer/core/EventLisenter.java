@@ -1,5 +1,6 @@
-package com.adagio.designpatterns.observer;
+package com.adagio.designpatterns.observer.core;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
@@ -15,14 +16,23 @@ public class EventLisenter {
 	}
 	
 	private void trigger(Event e) {
-//		e.setSource(source);
-//		e.setTarget(target);
+		e.setSource(this);
+		e.setTime(System.currentTimeMillis());
+		
+		try {
+			e.getCallback().invoke(e.getTarget(), e);
+		} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e1) {
+			e1.printStackTrace();
+		}
 	}
 	
-	public void trigger(Enum call) {
+	protected void trigger(Enum call) {
 		if(!this.events.containsKey(call)) {
 			return;
 		}
+		
+		trigger(this.events.get(call).setTrigger(call.toString()));
+		
 	}
 	
 }

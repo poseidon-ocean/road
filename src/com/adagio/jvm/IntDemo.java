@@ -1,6 +1,6 @@
 package com.adagio.jvm;
 
-public class Demo {
+public class IntDemo {
 
 	public static void main(String[] args) {
 		int num = 50;
