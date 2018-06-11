@@ -108,9 +108,25 @@
 	* 2. 事件驱动机制：事件到的时候触发，而不是同步的去监视事件。
 	* 3. 线程通讯：线程之间通过 wait,notify 等方式通讯。保证每次上下文切换都是有意义的。减少无谓的线程切换。
 * 选择器 Selector
+	* 传统的 Server/Client 模式会基于 TPR（Thread per Request）,服务器会为每个客户端请求建立一个线程
+	* NIO 中非阻塞 I/O 采用了基于 Reactor 模式的工作方式，I/O 调用不会被阻塞
+	* Selector 就是注册各种 I/O 事件地 方
+	* 使用 NIO 中非阻塞 I/O 编写服务器处理程序
+		* 1. 向 Selector 对象注册感兴趣的事件
+		* 2. 从 Selector 中获取感兴趣的事件
+		* 3. 根据不同的事件进行相应的处理
 
-
-
+## Java AIO（Asynchronous IO）
+* 服务端:AsynchronousServerSocketChannel
+* 客服端:AsynchronousSocketChannel	
+* 用户处理器:CompletionHandler 接口,这个接口实现应用程序向操作系统发起 IO 请求,当完成后处理具体逻辑，否则做自己该做的事情
+```
+“真正”的异步IO需要操作系统更强的支持。在IO多路复用模型中，事件循环将文件句柄
+的状态事件通知给用户线程，由用户线程自行读取数据、处理数据。而在异步IO模型中，
+当用户线程收到通知时，数据已经被内核读取完毕，并放在了用户线程指定的缓冲区内，
+内核在IO完成后通知用户线程直接使用即可。异步IO模型使用了Proactor设计模式实现了
+这一机制
+```
 
 
 
